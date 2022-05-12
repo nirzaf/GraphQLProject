@@ -38,7 +38,7 @@ public class ProductService : IProduct
         return p;
     }
 
-    public async Task DeleteProductAsync(long id)
+    public void DeleteProductAsync(long id)
     {
         var p = _products.FirstOrDefault(c => c.Id == id);
         _products.Remove(p);
@@ -46,6 +46,6 @@ public class ProductService : IProduct
 
     public async Task<Product> GetProductByIdAsync(long id)
     {
-        return _products.FirstOrDefault(c => c.Id == id);
+        return _products.FirstOrDefault(c => c.Id == id)!;
     }
 }
