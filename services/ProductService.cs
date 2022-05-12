@@ -34,7 +34,8 @@ public class ProductService : IProduct
     {
 
         var p = _products.FirstOrDefault(c => c.Id == id);
-        p = product;
+        p.Name = product.Name;
+        p.Price = product.Price;
         return p;
     }
 
